@@ -34,3 +34,5 @@ Route::get('/article/category/{category}', [ArticleController::class, 'byCategor
 Route::get('/article/user/{user}', [ArticleController::class, 'byUser'])->name('article.byUser');
 //lavora con noi
 Route::get('/careers', [PublicController::class, 'careers'])->name('careers');
+// Form ruolo utente
+Route::post('/careers/submit', [PublicController::class, 'careersSubmit'])->name('careersSubmit');
