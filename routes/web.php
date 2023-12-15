@@ -22,10 +22,12 @@ Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/register', [PublicController::class, 'register'])->name('register');
 // PAGINA LOGIN
 Route::get('/login', [PublicController::class, 'login'])->name('login');
-//VISTA CREA ARTICOLO
-Route::get('/article/create', [ArticleController::class, 'create'])->name('create');
-//rotta store articolo
-Route::post('/article/store', [ArticleController::class,'store'])->name('article.store');
+Route::middleware('writer')->group(function(){
+    //VISTA CREA ARTICOLO
+    Route::get('/article/create', [ArticleController::class, 'create'])->name('create');
+    //rotta store articolo
+    Route::post('/article/store', [ArticleController::class,'store'])->name('article.store');
+});
 //index degli articoli
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 // show degli articoli 
