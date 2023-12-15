@@ -15,6 +15,12 @@
                     <h2>{{$article->subtitle}}</h2>
                     <p class="text-break">{{$article->body}}</p>
                 </div>
+                @if(Auth::user() && Auth::user()->is_revisor)
+                <div class="col-12 mb-5 mt-5 justify-content-center">
+                        <a href="{{route('revisor.acceptArticle', compact('article'))}}" class="btn btn-success text-white">Accetta articolo</a>
+                        <a href="{{route('revisor.reject', compact('article'))}}" class="btn btn-danger text-white">Rifiuta articolo</a>
+                </div>
+                @endif  
             </div>
    </div>
 </x-layout>

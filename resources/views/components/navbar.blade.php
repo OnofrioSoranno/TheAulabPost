@@ -43,10 +43,13 @@
                 <ul class="dropdown-menu">
                   <form action="{{route('logout')}}" method="POST">
                     @csrf
-                    <li><button>logout</button></li>
+                    <li><button>Logout</button></p></li>
                   </form>
-
-                    <li><a class="dropdown-item" href="">Something else here</a></li>
+                  @if(Auth::user()->is_admin)
+                    <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard admin</a></li>
+                  @elseif(Auth::user()->is_revisor)
+                    <li><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard revisore</a></li>
+                  @endif
                 </ul>
             </div>
         </li>

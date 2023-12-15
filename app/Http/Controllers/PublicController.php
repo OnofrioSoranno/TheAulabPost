@@ -17,7 +17,7 @@ class PublicController extends Controller
 
     // homePage
     public function home(){
-        $articles = Article::orderBy('created_at', 'desc')->take(4)->get();
+        $articles = Article::where('is_accepted', TRUE)->orderBy('created_at', 'desc')->take(4)->get();
         return view('welcome', compact('articles')); 
     }
     // funzione pagina per registrarti
@@ -62,6 +62,7 @@ class PublicController extends Controller
                 break;
         }
         
+        $user->update();    
         return redirect(route('home'))->with('message', 'Grazie per averci contattato.');
     }
 

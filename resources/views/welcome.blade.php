@@ -30,4 +30,6 @@
             </div>
             {{-- FINE CARD ARTICOLO --}}
 
+            <a href="{{route('careers')}}">lavora con noi</a>
+
 </x-layout>
