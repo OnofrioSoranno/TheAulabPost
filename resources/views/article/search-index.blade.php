@@ -1,18 +1,10 @@
 <x-layout>
-    {{-- MESSAGGIO --}}
-            @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>TUTTI GLI ARTICOLI PER: {{$query}}</h1>
             </div>
-            @endif
-
-            {{-- CARD ARTICOLI --}}
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 mt-5">
-                        <h1 class="text-center">ULTIMI ARTICOLI</h1>
-                    </div>
-                    @foreach ($articles as $article)
+            @forelse ($articles as $article)
                     <div class="col-12 col-md-4 mt-3">
                         <div class="card" style="width: 18rem;">
                             <img src="{{Storage::url($article->image)}}" class="card-img-top" alt="...">
@@ -25,11 +17,11 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                @empty
+                <div class="col-12">
+                    <h2>Non ci sono articoli da visualizzare</h2>
                 </div>
-            </div>
-            {{-- FINE CARD ARTICOLO --}}
-
-            <a href="{{route('careers')}}">lavora con noi</a>
-
+            @endforelse
+        </div>
+    </div>
 </x-layout>

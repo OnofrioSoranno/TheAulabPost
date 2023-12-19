@@ -61,3 +61,5 @@ Route::middleware('revisor')->group(function()
     // RIMANDA A REVISIONE L'ARTICOLO
     Route::get('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undo');
 });
+// BARRA DI RICERCA
+Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');

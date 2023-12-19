@@ -55,5 +55,11 @@
         </li>
         @endauth
       </ul>
+
+          <form class="form-inline" method="GET" action="{{route('article.search')}}">
+            <input class="form-control ne-2" type="search" name="query" placeholder="Cosa stai cercando?" aria-label="Search">
+            <button class="btn btn-outline-info" type="submit">Search</button>
+          </form>
+
     </div>
 </nav>

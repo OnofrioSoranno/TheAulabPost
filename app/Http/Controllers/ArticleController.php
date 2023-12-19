@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ArticleController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except('index', 'show', 'byCategory', 'byUser');
+        $this->middleware('auth')->except('index', 'show', 'byCategory', 'byUser', 'articleSearch');
     }
     /**
      * Display a listing of the resource.
@@ -100,5 +100,13 @@ class ArticleController extends Controller
             return $article->is_accepted == true;
         });
         return view('article.byUser', compact('user', 'articles'));
+    }
+
+    // BARRA DI RICERCA
+    public function articleSearch(Request $request)
+    {
+        $query = $request->input('query');
+        $articles = Article::search($query)->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
+        return view('article.search-index', compact('query', 'articles'));
     }
 }
