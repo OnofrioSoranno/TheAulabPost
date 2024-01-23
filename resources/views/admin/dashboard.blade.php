@@ -53,4 +53,19 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Le categorie della piattaforma</h2>
+            <x-meta-info :metaInfos="$categories" metaType="categorie"></x-meta-info>
+            <form class="d-flex" action="{{route('admin.storeCategory')}}" method="POST">
+                @csrf
+                <input type="text" name="name" class="form-control me-2" placeholder="Inserisci una nuova categoria">
+                <button type="submit" class="btn btn-success text-white">Aggiungi</button>
+            </form>
+        </div>
+    </div>
+</div> 
+
 </x-layout>

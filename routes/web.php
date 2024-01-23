@@ -22,12 +22,6 @@ Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/register', [PublicController::class, 'register'])->name('register');
 // PAGINA LOGIN
 Route::get('/login', [PublicController::class, 'login'])->name('login');
-Route::middleware('writer')->group(function(){
-    //VISTA CREA ARTICOLO
-    Route::get('/article/create', [ArticleController::class, 'create'])->name('create');
-    //rotta store articolo
-    Route::post('/article/store', [ArticleController::class,'store'])->name('article.store');
-});
 //index degli articoli
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 // show degli articoli 
@@ -40,6 +34,13 @@ Route::get('/article/user/{user}', [ArticleController::class, 'byUser'])->name('
 Route::get('/careers', [PublicController::class, 'careers'])->name('careers');
 // Form ruolo utente
 Route::post('/careers/submit', [PublicController::class, 'careersSubmit'])->name('careersSubmit');
+// ROTTE WRITER 
+Route::middleware('writer')->group(function(){
+    //VISTA CREA ARTICOLO
+    Route::get('/article/create', [ArticleController::class, 'create'])->name('create');
+    //rotta store articolo
+    Route::post('/article/store', [ArticleController::class,'store'])->name('article.store');
+});
 // Rotte admin 
 Route::middleware('admin')->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -51,6 +52,9 @@ Route::middleware('admin')->group(function(){
     Route::get('/admin/{user}/set-writer', [AdminController::class, 'setWriter'])->name('admin.setWriter');
     Route::put('/admin/edit/{tag}/tag', [AdminController::class, 'editTag'])->name('admin.editTag');
     Route::delete('/admin/delete/{tag}/tag', [AdminController::class, 'deleteTag'])->name('admin.deleteTag');
+    Route::put('/admin/edit/{category}/category', [AdminController::class, 'editCategory'])->name('admin.editCategory');
+    Route::delete('/admin/delete/{category}/category', [AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
+    Route::post('/admin/category/store', [AdminController::class, 'storeCategory'])->name('admin.storeCategory');
 });
     Route::put('/admin/edit/{tag}/tag', [AdminController::class, 'editTag'])->name('admin.editTag');
 // ROTTE REVISORE
