@@ -21,6 +21,11 @@
                               <h3 class="card-title">{{$article->subtitle}}</h3>
                               <a href="{{route('article.byCategory', ['category' => $article->category->id])}}"><p class="card-text">{{$article->category->name}}</p></a>
                               <p class="card-text">Pubblicato il {{$article->created_at->format('d/m/y')}} da <a href="{{route('article.byUser', ['user' => $article->user->id])}}">{{$article->user->name}}</a></p>
+                              <p class="small fst-italic text-capitalize">
+                                @foreach ($article->tags as $tag)
+                                    #{{$tag->name}}
+                                @endforeach
+                            </p>  
                               <a href="{{route('article.show', compact('article'))}}" class="btn btn-primary">Leggi qui</a>
                             </div>
                         </div>

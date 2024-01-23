@@ -9,6 +9,11 @@
                       <h4 class="card-title">{{$article->title}}</h4>
                       <h3 class="card-title">{{$article->subtitle}}</h3>
                       <p class="card-text"><strong>{{$article->category->name}}</strong></p>
+                      <p class="small fst-italic text-capitalize">
+                        @foreach ($article->tags as $tag)
+                            #{{$tag->name}}
+                        @endforeach
+                      </p>   
                       <p class="card-text">Pubblicato il {{$article->created_at->format('d/m/y')}} da {{$article->user->name}}</p>
                       <a href="{{route('article.show', compact('article'))}}" class="btn btn-primary">Leggi qui</a>
                     </div>
