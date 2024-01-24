@@ -49,6 +49,8 @@
                     <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard admin</a></li>
                   @elseif(Auth::user()->is_revisor)
                     <li><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard revisore</a></li>
+                  @elseif(Auth::user()->is_writer)
+                  <li><a class="dropdown-item" href="{{route('writer.dashboard')}}">Dashboard Writer</a></li>
                   @endif
                 </ul>
             </div>

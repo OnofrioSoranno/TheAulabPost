@@ -14,6 +14,9 @@
                 <div class="col-12 mt-5">
                     <h2>{{$article->subtitle}}</h2>
                     <p class="text-break">{{$article->body}}</p>
+                    @foreach ($article->tags as $tag)
+                        #{{$tag->name}}
+                    @endforeach
                 </div>
                 @if(Auth::user() && Auth::user()->is_revisor && $article->is_accepted == NULL)
                 <div class="col-12 mb-5 mt-5 justify-content-center">

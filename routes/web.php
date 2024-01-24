@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\WriterController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
 
@@ -67,6 +68,13 @@ Route::middleware('revisor')->group(function()
     Route::get('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.reject');
     // RIMANDA A REVISIONE L'ARTICOLO
     Route::get('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undo');
+});
+// ROTTE WRITER 
+Route::middleware('writer')->group(function(){
+   Route::get('/writer/dashboard', [WriterController::class, 'dashboard'])->name('writer.dashboard');
+   Route::get('/article/{article}/edit', [ArticleController::class, 'edit'])->name('article.edit');
+   Route::put('/article/{article}/update', [ArticleController::class, 'update'])->name('article.update');
+   Route::delete('/article/{article}/destroy', [ArticleController::class, 'destroy'])->name('article.destroy');
 });
 // BARRA DI RICERCA
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
