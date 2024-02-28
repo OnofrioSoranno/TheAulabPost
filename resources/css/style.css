@@ -1,0 +1,92 @@
+:root{
+    --color-P:#ff8f0f;
+}
+.color-p{
+    background-color: var(--color-P) !important;
+}
+
+
+/* NAVBAR  */
+
+.dropDown{
+    background-color: var(--color-P);
+    border: none;
+}
+
+.dropDown li a{
+    color: white;
+}
+
+.dropDown li a:hover{
+    color: black;
+    background-color: var(--color-P);
+}
+
+.transition{
+    transition: 1s;
+}
+
+/* BARRA DI RICERCA */
+.searchBar{
+    background-color: rgba(255, 255, 255, 0.411);  
+    border-radius: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.searchBar input{
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    width: 80%;
+}
+
+
+
+.searchBar button{
+    color: white;
+    border: 1px solid var(--color-P);
+    border-radius: 30px;
+    background-color: var(--color-P);
+    margin-right:5px ;
+
+}
+
+.searchBar button:hover{
+    color: black;
+    border: 1px solid var(--color-P);
+    border-radius: 30px;
+    background-color: var(--color-P);
+    margin-right:5px ;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .navCustom{
+        background-color: var(--color-P); 
+        margin: 5vh 15vh 0vh 15vh;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(24, 7, 7, 0.192) ;
+        border-radius: 40px;
+    }
+    h1{
+      font-size: 8em;
+      font-weight:900 ;
+      color: rgb(0, 0, 0);
+    }
+  }
+
+  /* HEADER  */
+  .headerCustom{
+    height: 75vh;
+    background-image: url(../../public/image/giornale.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  h1{
+    font-size: 2em;
+  }

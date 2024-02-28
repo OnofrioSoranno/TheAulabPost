@@ -1,16 +1,27 @@
 <x-layout>
     {{-- MESSAGGIO --}}
             @if (session('message'))
-            <div class="alert alert-success">
+            <div class="alert alert-success mt-5">
                 {{ session('message') }}
             </div>
             @endif
+
+            {{-- INIZIO HEADER  --}}
+            <header class="container-fluid headerCustom">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-12 d-flex h-100 justify-content-center align-items-center flex-column">
+                        <h1>THE AULAB POST</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, eum?</p>
+                    </div>
+                </div>
+            </header>
+            {{-- FINE HEADER  --}}
 
             {{-- CARD ARTICOLI --}}
             <div class="container">
                 <div class="row">
                     <div class="col-12 mt-5">
-                        <h1 class="text-center">ULTIMI ARTICOLI</h1>
+                        <h3 class="text-center">ULTIMI ARTICOLI</h3>
                     </div>
                     @foreach ($articles as $article)
                     <div class="col-12 col-md-4 mt-3">
@@ -36,5 +47,6 @@
             {{-- FINE CARD ARTICOLO --}}
 
             <a href="{{route('careers')}}">lavora con noi</a>
+            <div class="container vh-100">prova</div>
 
 </x-layout>
