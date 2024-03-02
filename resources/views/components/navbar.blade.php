@@ -39,27 +39,27 @@
             Ciao {{Auth::user()->name}}
           </a>
           <ul class="dropdown-menu dropDown">
-            <li class="py-1">
+            <li class="py-1 px-2">
               <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button type="submit" class="p-0 btn linkNav">Logout</button>
               </form>
             </li>
-            <li class="py-1">
+            <li class="py-1 px-2">
               @if (Auth::user() && Auth::user()->is_revisor)
                   <a class="linkNav btn p-0" href="{{route('revisor.dashboard')}}">Dashboard Revisore</a>
               @endif
             </li>
-            <li>
+            <li class="px-2">
               @if (Auth::user() && Auth::user()->is_admin)
                   <a href="{{route('admin.dashboard')}}" class="btn linkNav p-0">Dashboard Admin</a>
               @endif
             </li>
             @if (Auth::user() && Auth::user()->is_writer)
-            <li class="py-1">
+            <li class="py-1 px-2">
               <a class="linkNav btn p-0" href="{{route('writer.dashboard')}}">Dashboard Scrittore</a>
             </li>
-            <li class="py-1">
+            <li class="px-2">
               <a class="linkNav btn p-0" href="{{route('create')}}">Crea articolo</a>
             </li>
             @endif

@@ -56,7 +56,7 @@
             {{-- FINE CARD ARTICOLO --}}
 
 
-            <a href="{{route('careers')}}">lavora con noi</a>
+           
 
           
         

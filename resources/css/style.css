@@ -64,6 +64,7 @@ nav{
     position: relative; 
     padding-bottom:1px; 
     color: white;
+    text-decoration: none;
 }
 
 .linkNav:hover{
@@ -164,11 +165,6 @@ background-color: var(--color-P);
 
 
 
-/* footer  */
-footer{
-    background-color: var(--color-P);
-    
-    }
 
     /* card */
     .card img{
@@ -275,8 +271,23 @@ footer{
         transform: scaleX(1);
     }
 
-    
-    
+    /* FOOTER  */
+    .iconSocial{
+        font-size: 15px;
+        color: white;
+    }
+
+    /* footer  */
+    footer{
+    background-color: var(--color-P);
+    }
+
+    .jobLink:hover{
+        color:rgba(134, 134, 134, 0.993) ;
+        transition: 1s;
+    }
+
+
     /* media  */
      @media screen and (min-width: 576px) {
         h1{
