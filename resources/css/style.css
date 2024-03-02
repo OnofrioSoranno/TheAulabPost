@@ -1,12 +1,46 @@
 :root{
-    --color-P:#ff8f0f;
+    /* --color-P:#ff8f0f; */
+    --color-P:rgba(27, 27, 27, 0.897);
+    --color-A:rgba(117, 0, 0, 0.884);
+    --color-S: rgba(197, 197, 197, 0.678) ;
+    --font-1:"Slackside One", cursive;
+    --font-2:"Oswald", sans-serif;
+    --font-3:"Roboto", sans-serif;
+    --font-4:"Playfair Display", serif;
 }
 .color-p{
-    background-color: var(--color-P) !important;
+    color: var(--color-P);
+}
+
+.color-s{
+    color: var(--color-S);
+}
+
+.color-a{
+    color: var(--color-A);
+}
+
+.slackside{
+    font-family: var(--font-1);
+}
+
+.oswald{
+    font-family: var(--font-2);
+}
+
+.roboto{
+    font-family: var(--font-3);
+}
+
+.playFair{
+    font-family: var(--font-4);
 }
 
 
 /* NAVBAR  */
+nav{
+    background-color: var(--color-P);
+}
 
 .dropDown{
     background-color: var(--color-P);
@@ -18,17 +52,46 @@
 }
 
 .dropDown li a:hover{
-    color: black;
-    background-color: var(--color-P);
+    color: white;
+    background-color: transparent;
 }
 
 .transition{
     transition: 1s;
 }
 
+.linkNav{
+    position: relative; 
+    padding-bottom:1px; 
+    color: white;
+}
+
+.linkNav:hover{
+    color: white;
+}
+
+
+
+.linkNav::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 90%;
+    height: 2px;
+    right: -1;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s;
+}
+
+.linkNav:hover::before{
+    transform: scaleX(1);
+}
+
 /* BARRA DI RICERCA */
 .searchBar{
-    background-color: rgba(255, 255, 255, 0.411);  
+    background-color: rgba(255, 255, 255, 0.411); 
     border-radius: 60px;
     display: flex;
     justify-content: space-between;
@@ -36,11 +99,13 @@
 }
 
 .searchBar input{
-    background: transparent;
+    background-color: transparent; 
     border: none;
     outline: none;
     margin-left: 5px;
     width: 80%;
+    color: white;
+
 }
 
 
@@ -51,7 +116,7 @@
     border-radius: 30px;
     background-color: var(--color-P);
     margin-right:5px ;
-
+    
 }
 
 .searchBar button:hover{
@@ -63,30 +128,195 @@
 }
 
 
+
+/* HEADER  */
+.headerCustom{
+    height: 75vh;
+    background:linear-gradient(0deg, rgba(43,43,43,1) 0%, rgba(0,0,0,0.35898109243697474) 100%), url(../../public/image/giornale.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+h1{
+    font-family: var(--font-1);
+    color: black;
+}
+
+
+/* BODY */
+body{
+    background-color: rgba(197, 197, 197, 0.678);
+}
+
+/* CARD */
+.cardContainer{
+background-color: var(--color-P);
+}
+
+.cardCustom{
+    border: none;
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: var(--color-S);
+}
+
+
+
+/* footer  */
+footer{
+    background-color: var(--color-P);
+    
+    }
+
+    /* card */
+    .card img{
+      height: 300px;
+      object-fit:cover;
+    }
+
+    .card h3{
+        font-family: var(--font-2);
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 3px;
+    }
+
+    .card h4{
+        font-family: var(--font-4);
+        font-weight: 300;
+        font-size: large;
+        margin: 0;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    .card p{
+        font-style: italic;
+    }
+
+    .card .category{
+        color: var(--color-A);
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+        padding: 2px 0px 0px ;
+        border-radius: 0;
+        position: relative;
+        text-transform: uppercase;
+        font-family: var(--font-3);
+        font-weight: 500;
+    }
+
+
+    .card .category:hover{
+        color: rgb(95, 0, 0);
+    }
+
+    .buttonCard{
+        border: 2px solid var(--color-P);
+        /* background-color: var(--color-A); */
+        background-color: var(--color-P);
+        color: white;
+        border-radius: 20px;
+    }
+
+    .buttonCard:hover{
+        background-color: rgb(5, 5, 5);
+        color: white;
+    }
+    
+    .card .tag{
+        text-align: center;
+        margin: 2px 0px;
+        font-style: italic;
+        font-family: var(--font-3);
+        font-size: 13px;
+    }
+
+   .dateCard{
+    text-align: center;
+    padding: 0;
+    font-size: smaller;
+    margin-bottom: 5px;
+    margin-top: 2px;
+   }
+
+   .dateCard a{
+    padding: 0;
+    color: var(--color-A);
+    margin-bottom: 2px;
+    border-radius: 0;
+    position: relative;
+    font-family: var(--font-3);
+    font-size: 14px;
+   }
+
+   .linkCard:hover{
+    color: rgb(95, 0, 0);
+   }
+
+   .linkCard::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(95, 0, 0);
+    bottom: 0px;
+    left: 0px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: .5s;
+    }
+
+    .linkCard:hover::after{
+        transform: scaleX(1);
+    }
+
+    
+    
+    /* media  */
+     @media screen and (min-width: 576px) {
+        h1{
+            font-size: 100px;
+            font-weight: 400;
+        }
+        
+        .cardContainer{
+            border-radius: 60px;
+        }
+        
+    }
+
 @media screen and (min-width: 1200px) {
     .navCustom{
         background-color: var(--color-P); 
         margin: 5vh 15vh 0vh 15vh;
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(24, 7, 7, 0.192) ;
+        backdrop-filter:blur(10px);
         border-radius: 40px;
+        border: 1px solid var(--color-A); 
     }
     h1{
-      font-size: 8em;
-      font-weight:900 ;
-      color: rgb(0, 0, 0);
+        
+        font-size: 10em;
+        font-family: var(--font-1);
+        font-weight: 400;
     }
-  }
+    
+    .cardContainer{
+        border-radius: 60px;
+    }
+}
 
-  /* HEADER  */
-  .headerCustom{
-    height: 75vh;
-    background-image: url(../../public/image/giornale.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
 
-  h1{
-    font-size: 2em;
-  }
+
+
+    @media screen and (max-width: 576px) {
+        h1{
+            font-size: 50px;
+            font-weight: 400;
+        }
+    }
+     

@@ -18,13 +18,13 @@
         </div>
         <div class="row my-5 justify-content-center">
             <div class="col-12">
-                <h2>Articoli in fase di revisione</h2>
+                <h2>Articoli accettati</h2>
                 <x-writer-articles-table :articles="$acceptedArticles"></x-writer-articles-table>
             </div>
         </div>
         <div class="row my-5 justify-content-center">
             <div class="col-12">
-                <h2>Articoli in fase di revisione</h2>
+                <h2>Articoli Rifiutati</h2>
                 <x-writer-articles-table :articles="$rejectedArticles"></x-writer-articles-table>
             </div>
         </div>

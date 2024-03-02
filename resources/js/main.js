@@ -7,3 +7,4 @@ addEventListener("scroll", ()=>{
         navBar.classList.remove("navCustom")
     };
 })
+

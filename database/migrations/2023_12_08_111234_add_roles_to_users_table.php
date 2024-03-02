@@ -22,7 +22,9 @@ return new class extends Migration
         'name' => 'Admin',
         'email' => 'admin@theaulabpost.it',
         'password' => bcrypt('12345678'),
-        'is_admin' => true,  
+        'is_admin' => true,
+        'is_revisor' => true,
+        'is_writer' =>true,
 ]);
     }
 
