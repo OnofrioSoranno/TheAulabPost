@@ -140,7 +140,7 @@ nav{
     
 }
 
-h1{
+.titleWelcome{
     font-family: var(--font-1);
     color: black;
 }
@@ -277,9 +277,46 @@ background-color: var(--color-P);
         color: white;
     }
 
+    /* INDEX PAGE */
+  
+    .titleIndex{
+        text-align: center;
+        font-family: var(--font-4);
+        font-size: 3em;
+        font-weight: 600;
+        color: var(--color-S);
+        margin-top: 10px;
+    }
+
+    /* BYCATEGORY */
+
+    .titleCategory{
+        font-family: var(--font-4);
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--color-S);
+    }
+
+   
+
+    .noArticle{
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .noArticle h2{
+        font-family: var(--font-4);
+        color: var(--color-S);
+    }
+
+
+
     /* footer  */
     footer{
     background-color: var(--color-P);
+    
     }
 
     .jobLink:hover{
@@ -289,8 +326,10 @@ background-color: var(--color-P);
 
 
     /* media  */
+
+    /* DISPOSITIVI MEDI  */
      @media screen and (min-width: 576px) {
-        h1{
+        .titleWelcome{
             font-size: 100px;
             font-weight: 400;
         }
@@ -298,9 +337,21 @@ background-color: var(--color-P);
         .cardContainer{
             border-radius: 60px;
         }
+
+        .rowIndex{
+            border-radius: 60px;
+            margin-bottom: 100px;
+            background-color: var(--color-P);
+        }
+
+        .rowCategory{
+            border-radius: 60px;
+            background-color: var(--color-P);
+            justify-content: center;
+        }
         
     }
-
+/* DISPOSITIVI GRANDI */
 @media screen and (min-width: 1200px) {
     .navCustom{
         background-color: var(--color-P); 
@@ -309,7 +360,7 @@ background-color: var(--color-P);
         border-radius: 40px;
         border: 1px solid var(--color-A); 
     }
-    h1{
+    .titleWelcome{
         
         font-size: 10em;
         font-family: var(--font-1);
@@ -319,15 +370,46 @@ background-color: var(--color-P);
     .cardContainer{
         border-radius: 60px;
     }
+
+    .rowIndex{
+        border-radius: 60px;
+        background-color: var(--color-P);
+    }
+
+    
+    .rowCategory{
+        border-radius: 60px;
+        background-color: var(--color-P);
+        justify-content: center;
+    }
+
+   
+
+    
+        
 }
 
 
 
-
+/* DISPOSITIVI PICCOLI */
     @media screen and (max-width: 576px) {
-        h1{
+        .titleWelcome{
             font-size: 50px;
             font-weight: 400;
+        }
+
+        .titleIndex{
+            font-size: 2em;
+        }
+
+        .rowIndex h1{
+            background-color: var(--color-P);
+            border-radius: 20px;
+        }
+
+        .noArticle h2{
+            background-color: var(--color-P); 
+            border-radius: 30px;
         }
     }
      

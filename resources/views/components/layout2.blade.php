@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="bodyAuth">
     <x-navbar></x-navbar>
     {{$slot}}
 

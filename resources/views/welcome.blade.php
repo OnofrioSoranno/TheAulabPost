@@ -10,7 +10,7 @@
             </div>
             @endif
             <div class="col-12 d-flex h-100 justify-content-center align-items-center flex-column">
-                        <h1 class="mt-5 pt-5">THE AULAB POST</h1>
+                        <h1 class="titleWelcome mt-5 pt-5">THE AULAB POST</h1>
                         <p class="color-s fs-3 playFair">"La notizia che conta, ora e sempre"</p>
                     </div>
                 </div>

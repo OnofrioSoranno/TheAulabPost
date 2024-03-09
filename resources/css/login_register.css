@@ -1,0 +1,51 @@
+
+    /* login e register */
+
+    .bodyAuth{
+        background:linear-gradient(0deg, rgba(43,43,43,1) 0%, rgba(0,0,0,0.35898109243697474) 100%), url(../../public/image/giornale.jpg) center;
+        background-size: cover;
+    }
+
+    .rowAuth{
+        height: 400px;
+        width: 800px;
+        border-radius: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-P);
+        color: var(--color-S);
+    }
+
+    .rowAuth label{
+        font-family: var(--font-3);
+    
+    }
+    .rowAuth input{
+        width: 600px;
+        border-radius: 30px;
+        background-color: var(--color-S);
+        border: none;
+    
+    }
+    .rowAuth input:focus{
+        background-color: var(--color-S);
+        border: 2px solid var(--color-A);
+    }
+    .rowAuth input:active{
+        background-color: var(--color-S);
+        border: 2px solid var(--color-A);
+
+    }
+
+    .containerButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 40px; */
+    }
+    .rowAuth button{
+        background-color: var(--color-S);
+        border-radius: 30px;
+        padding: 10px;
+    }

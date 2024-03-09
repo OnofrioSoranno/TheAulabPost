@@ -1,12 +1,12 @@
-<x-layout>
-    <div class="container">
+<x-layoutAuth>
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center mt-5">ACCEDI</h1> 
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 mt-5">
+        <div class="row justify-content-center ">
+            <div class="col-12 rowAuth col-md-4 mt-5">
                  @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -26,9 +26,11 @@
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>     
+                    <div class="containerButton">
+                        <button type="submit" class="btn btn-primary">ACCEDI</button>     
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-</x-layout>
+</x-layoutAuth>
